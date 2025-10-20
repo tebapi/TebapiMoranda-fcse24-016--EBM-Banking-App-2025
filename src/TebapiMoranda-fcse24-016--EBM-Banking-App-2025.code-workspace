@@ -4,5 +4,14 @@
 			"path": ".."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"java.project.sourcePaths": [
+			"src"
+		],
+		"java.project.referencedLibraries": [
+			"/workspaces/TebapiMoranda-fcse24-016--EBM-Banking-App-2025/lib/slf4j-simple.jar",
+			"/workspaces/TebapiMoranda-fcse24-016--EBM-Banking-App-2025/lib/slf4j-api.jar",
+			"/workspaces/TebapiMoranda-fcse24-016--EBM-Banking-App-2025/lib/sqlite-jdbc.jar"
+		]
+	}
 }
