@@ -6,3 +6,5 @@ public class Main {
         new BankController().run();
     }
 }
+
+//main method class
