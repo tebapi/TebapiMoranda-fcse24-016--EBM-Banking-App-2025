@@ -21,6 +21,9 @@ public class BankController {
         sc = new Scanner(System.in);
     }
 
+    /**
+     * @throws SQLException
+     */
     public void run() throws SQLException {
         while (true) {
             view.showMenu();
@@ -28,19 +31,27 @@ public class BankController {
             sc.nextLine(); // clear newline
 
             switch (choice) {
-                case 1 -> addCustomer();
-                case 2 -> addAccount();
-                case 3 -> view.displayCustomers(customerDao.getAllCustomers());
-                case 4 -> view.displayAccounts(accountDao.getAllAccounts());
-                case 5 -> updateCustomer();
-                case 6 -> deleteCustomer();
-                case 7 -> updateAccountBalance();
-                case 8 -> deleteAccount();
-                case 9 -> {
+                case 1 : addCustomer();
+                break;
+                case 2 : addAccount();
+                break;
+                case 3 : view.displayCustomers(customerDao.getAllCustomers());
+                break;
+                case 4 : view.displayAccounts(accountDao.getAllAccounts());
+                break;
+                case 5 : updateCustomer();
+                break;
+                case 6 : deleteCustomer();
+                break;
+                case 7 : updateAccountBalance();
+                break;
+                case 8 : deleteAccount();
+                break;
+                case 9 : {
                     System.out.println("Exiting system...");
                     System.exit(0);
                 }
-                default -> System.out.println("Invalid choice!");
+                default : System.out.println("Invalid choice!");
             }
         }
     }

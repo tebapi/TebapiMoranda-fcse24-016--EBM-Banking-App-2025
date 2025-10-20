@@ -5,14 +5,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/bankdb";
-    private static final String USER = "root";
-    private static final String PASSWORD = "";
+    private static final String URL = "jdbc:sqlite:bankdb.db";
 
     public static Connection getConnection() {
         try {
-            return DriverManager.getConnection(URL, USER, PASSWORD);
+        
+            Class.forName("org.sqlite.JDBC");
+            return DriverManager.getConnection(URL);
+        } catch (ClassNotFoundException e) {
+            System.out.println("SQLite JDBC Driver not found!");
+            e.printStackTrace();
+            return null;
         } catch (SQLException e) {
+            System.out.println("Connection to database failed!");
             e.printStackTrace();
             return null;
         }
